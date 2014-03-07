@@ -43,6 +43,9 @@ object Main extends App {
 	  val b1 = new breuk(2,-4)
 	  val b2 = new breuk(5,6)
 	  println("breuk: " + b1 + " + " + b2 + " = " + (b1 + b2))
+	  val c1 = { case "x" => new breuk(3,5)
+	  			 case "y" => new breuk(2,3)} : String => breuk
+	  println("case: " + c1("x"))
 	  
 	}
 }
