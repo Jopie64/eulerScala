@@ -2,7 +2,7 @@ package nl.hartware.euler
 
 class Problem1 extends Problem[Int] {
 	override def answer() : Int = {
-	  List.tabulate(999)(n => n+1).filter(n => n % 3 == 0 || n % 5 == 0).fold(0)(_ + _)
+	  (1 until 1000).view.filter(n => n % 3 == 0 || n % 5 == 0).sum
 	}
 	
 	//qad = Quick And Dirty
