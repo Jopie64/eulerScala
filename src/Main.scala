@@ -14,9 +14,12 @@ object Breuk {
     }
     a
   }
+  
+  def apply(tel:Int, n:Int):Breuk = new Breuk(tel,n)
+  def apply(tel:Int):Breuk = new Breuk(tel,1)
 }
 
-case class Breuk(teller: Int, noemer: Int) {
+class Breuk(teller: Int, noemer: Int) {
   var tt = teller
   var nn = noemer
   if (nn < 0) { tt = -tt; nn = -nn; }
@@ -31,7 +34,7 @@ case class Breuk(teller: Int, noemer: Int) {
   
   def +(that: Breuk) = {
       val addT = n * that.t;
-	  new Breuk(t * that.n + addT, n * that.n)
+	  Breuk(t * that.n + addT, n * that.n)
   }
 	  
 }
@@ -49,6 +52,10 @@ object Main extends App {
 	  	 		 case "y" => new Breuk(2,3)} : String => Breuk
 	  	 		 
 	  println("case: " + c1("x"))
+	  	 		 
+//	  val blist = Breuk(1) :: Breuk(1,2) :: Breuk(1,3) :: Nil
+	  val blist = List[Breuk](Breuk(1), Breuk(1,2), Breuk(1,3))
 	  
+//	  println("Opgeteld: " + blist.fold(0)((a:Any,b:Any):String => "". a + b))
 	}
 }
