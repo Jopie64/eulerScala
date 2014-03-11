@@ -7,4 +7,5 @@ object Main extends App {
   println("problem5: " + (new Problem5()).answer())
   println("problem6: " + (new Problem6()).answer())
   println("problem7: " + (new Problem7()).answer())
+  println("problem8: " + (new Problem8()).answer())
 }
