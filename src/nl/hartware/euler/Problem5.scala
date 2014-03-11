@@ -9,6 +9,6 @@ class Problem5 extends Problem[BigInt] {
 	      if(cur < j._2)
 	    	  allDivs(j._1) = j._2
 	  }
-	  allDivs.map(n => n._1 * n._2).fold(1)(_ * _)
+	  allDivs.map(n => math.pow(n._1, n._2).toInt).fold(1)(_ * _)
 	}
 }
