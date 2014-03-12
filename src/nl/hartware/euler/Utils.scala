@@ -10,7 +10,7 @@ object Utils {
     lazy val primes : Stream[Int] = 2 #:: (Stream.from(3).filter(n => {
 	    primes.takeWhile(n2 => n2 * n2 <= n).forall(n2 => n % n2 != 0)}))
 	    
-	def dividers(n : Int):Map[Int,Int] = {
+	def dividers(n : BigInt):Map[Int,Int] = {
       var divs = collection.mutable.Map[Int,Int]()
       var left = n
       for(i <- primes) {

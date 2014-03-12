@@ -1,6 +1,25 @@
 import nl.hartware.euler._
 
 
+class Problem12 extends Problem[BigInt] {
+  def triangle : Stream[BigInt] = {
+    val t = Stream.from(1).map(n => (BigInt(1) to BigInt(n)).sum)
+    t
+  }
+  
+  val target = 5L
+	override def answer():BigInt = {
+      val first = Math.pow(2,(target - 2).toDouble).toInt;
+      println(first)
+	  for(i <- triangle; if(i>=first)) {//withFilter(n => n >= first)
+	    println(i)
+	    val n = Utils.dividers(i).map(_._2).sum + 2
+	    if(n == target)
+	      return i
+	  }
+	  throw new Exception("Driehoek nummers zijn op")
+	}
+}
 
 object Main extends App {
   def oldProblems() = {
@@ -15,5 +34,7 @@ object Main extends App {
 	  println("problem10: "+ (new Problem10()).answer())
   }
 
+  println(Utils.dividers(1308935303136L))
   println("problem11: "+ (new Problem11()).answer())
+  println("problem12: "+ (new Problem12()).answer())
 }
