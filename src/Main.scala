@@ -3,11 +3,10 @@ import nl.hartware.euler._
 
 class Problem12 extends Problem[BigInt] {
   def triangle : Stream[BigInt] = {
-    val t = Stream.from(1).map(n => (BigInt(1) to BigInt(n)).sum)
-    t
+    return Stream.from(1).map(n => BigInt(n) * (BigInt(n) + BigInt(1)) / BigInt(2))
   }
   
-  val target = 5L
+  val target = 30L
 	override def answer():BigInt = {
       val first = Math.pow(2,(target - 2).toDouble).toInt;
       println(first)
