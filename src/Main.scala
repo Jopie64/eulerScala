@@ -1,7 +1,6 @@
 import nl.hartware.euler._
 
 
-
 object Main extends App {
   def oldProblems() = {
 	  println("problem1: " + (new Problem1()).answer())
@@ -14,6 +13,6 @@ object Main extends App {
 	  println("problem9: " + (new Problem9()).answer())
 	  println("problem10: "+ (new Problem10()).answer())
   }
-
   println("problem11: "+ (new Problem11()).answer())
+  println("problem13: "+ (new Problem13()).answer())
 }
