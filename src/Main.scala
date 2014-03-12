@@ -1,5 +1,16 @@
 import nl.hartware.euler._
 
+class Problem15 extends Problem[BigInt] {
+  val (szX,szY) = (BigInt(2),BigInt(3))
+  
+  def calc(szX: BigInt, szY : BigInt): BigInt = {
+    if(szX == 1) return szY;
+    (BigInt(1) to szY).view.map(n => calc(szX - BigInt(1), n)).sum
+  }
+	override def answer():BigInt = {
+	  calc(szX,szY)
+	}
+}
 
 object Main extends App {
   def oldProblems() = {
@@ -12,8 +23,10 @@ object Main extends App {
 	  println("problem8: " + (new Problem8()).answer())
 	  println("problem9: " + (new Problem9()).answer())
 	  println("problem10: "+ (new Problem10()).answer())
+	  println("problem11: "+ (new Problem11()).answer())
+	  println("problem13: "+ (new Problem13()).answer())
+	  println("problem19: "+ (new Problem19()).answer())
   }
-  println("problem11: "+ (new Problem11()).answer())
-  println("problem13: "+ (new Problem13()).answer())
-  println("problem19: "+ (new Problem19()).answer())
+  println("begin...")
+  println("problem15: "+ (new Problem15()).answer())
 }
