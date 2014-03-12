@@ -15,4 +15,5 @@ object Main extends App {
   }
   println("problem11: "+ (new Problem11()).answer())
   println("problem13: "+ (new Problem13()).answer())
+  println("problem19: "+ (new Problem19()).answer())
 }
