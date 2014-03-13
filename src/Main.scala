@@ -1,17 +1,5 @@
 import nl.hartware.euler._
 
-class Problem15 extends Problem[BigInt] {
-  val (szX,szY) = (BigInt(2),BigInt(3))
-  
-  def calc(szX: BigInt, szY : BigInt): BigInt = {
-    if(szX == 1) return szY;
-    (BigInt(1) to szY).view.map(n => calc(szX - BigInt(1), n)).sum
-  }
-	override def answer():BigInt = {
-	  calc(szX,szY)
-	}
-}
-
 class Problem12 extends Problem[BigInt] {
   def triangle : Stream[BigInt] = {
     return Stream.from(1).map(n => BigInt(n) * (BigInt(n) + BigInt(1)) / BigInt(2))
@@ -48,5 +36,6 @@ object Main extends App {
   }
   println("begin...")
   println("problem15: "+ (new Problem15()).answer())
-  println("problem12: "+ (new Problem12()).answer())
+//  println("problem12: "+ (new Problem12()).answer())
+  println("done.")
 }
